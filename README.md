@@ -12,6 +12,7 @@ software.
 **ℹ️ ABOUT THIS TOOL**
 
 This is a redistribution of the official Android SDK Platform Tools.
+It is based on a legacy project by shimp208 on XDA forums, sharing the similar goal of a small footprint ADB & Fastboot binary, without dependency on Android Studio.
 
 **ADB (Android Debug Bridge):** A versatile command-line tool that lets
 you communicate with a device.
