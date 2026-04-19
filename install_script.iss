@@ -1,7 +1,7 @@
 [Setup]
 AppName=Minimal ADB and Fastboot Reborn
 AppId={{B561660D-8B3C-491D-9E3E-293F14FCAADA}
-AppVersion=2.0.3
+AppVersion=2.0.4
 AppPublisher=Google Inc.
 DefaultDirName={pf}\Minimal ADB and Fastboot Reborn
 DefaultGroupName=Minimal ADB and Fastboot Reborn
