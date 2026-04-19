@@ -1,11 +1,12 @@
-﻿[Setup]
+[Setup]
 AppName=Minimal ADB and Fastboot Reborn
 AppId={{B561660D-8B3C-491D-9E3E-293F14FCAADA}
 AppVersion=2.0.3
 AppPublisher=Google Inc.
 DefaultDirName={pf}\Minimal ADB and Fastboot Reborn
 DefaultGroupName=Minimal ADB and Fastboot Reborn
-OutputBaseFilename=Minimal ADB Fastboot Reborn
+AppendDefaultGroupName=yes
+OutputBaseFilename=Minimal ADB and Fastboot Reborn
 SetupIconFile={app}\android.ico
 UninstallDisplayIcon={app}\android.ico
 InfoBeforeFile=README.RTF
@@ -15,24 +16,27 @@ ChangesEnvironment=yes
 WizardStyle=modern dynamic includetitlebar
 PrivilegesRequired=admin
 DisableWelcomePage=no
+DisableProgramGroupPage=no
 VersionInfoCompany=Google Inc.
 VersionInfoCopyright=© 2026 Google Inc.
 VersionInfoDescription=Minimal ADB and Fastboot Reborn Installer
 VersionInfoOriginalFileName=Minimal ADB Fastboot Reborn Installer.exe
 VersionInfoProductName=Minimal ADB and Fastboot Reborn Installer
-VersionInfoProductTextVersion=2.0.3
-VersionInfoProductVersion=2.0.3.0
-VersionInfoTextVersion=2.0.3
-VersionInfoVersion=2.0.3.0
+VersionInfoProductTextVersion=2.0.4
+VersionInfoProductVersion=2.0.4.0
+VersionInfoTextVersion=2.0.4
+VersionInfoVersion=2.0.4.0
 WizardSizePercent=150,150
 AppPublisherURL=https://github.com/VglntzrX-MKII/MinimalADBandFastbootReborn
 AppSupportURL=https://github.com/VglntzrX-MKII/MinimalADBandFastbootReborn
 AppUpdatesURL=https://github.com/VglntzrX-MKII/MinimalADBandFastbootReborn/releases
-Encryption=True
 InternalCompressLevel=ultra64
 
 [Tasks]
 Name: "addtopath"; Description: "Add Minimal ADB and Fastboot to the system PATH variable (recommended)"; GroupDescription: "Advanced Options:"; 
+
+[Icons]
+Name: "{group}\Update Minimal ADB & Fastboot Reborn"; Filename: "{app}\updater.exe"; IconFilename: "{app}\android.ico"; WorkingDir: "{app}";
 
 [Files]
 Source: "{app}\adb.exe"; DestDir: "{app}"; Flags: ignoreversion
@@ -50,6 +54,7 @@ Source: "{app}\NOTICE.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{app}\source.properties"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{app}\sqlite3.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{app}\android.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{app}\updater.exe"; DestDir: "{app}"; Flags: ignoreversion
 
 [Registry]
 Root: HKLM; Subkey: "SYSTEM\CurrentControlSet\Control\Session Manager\Environment"; \
@@ -136,3 +141,6 @@ begin
       end;
   end;
 end;
+
+[Run]
+Filename: "{app}\updater.exe"; Description: "Check for the latest Google ADB & Fastboot binaries immediately"; Flags: postinstall nowait skipifsilent 
